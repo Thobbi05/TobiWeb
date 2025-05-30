@@ -1,65 +1,239 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
 body {
-    background: #f9f9f9;
-    color: #222;
+    margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    transition: background 0.3s, color 0.3s;
+}
+
+.bg-dark {
+    background: #181a1b !important;
+    color: #fff !important;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+/* =========================
+   NAVBAR (BARRA DE NAVEGACIÓN)
+========================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Fondo y texto para modo claro */
+.navbar-light {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+/* Fondo y texto para modo oscuro */
+.navbar-dark {
+    background: #181a1b !important;
+    color: #fff !important;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Menú de navegación */
+.navbar-nav {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
     margin: 0;
     padding: 0;
-    /* Alinea todo el contenido al inicio (izquierda) */
-    text-align: left;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    margin-bottom: 0.5em;
-    text-align: left; /* Asegura títulos alineados a la izquierda */
-}
-
-a {
-    color: #0078d4;
+/* Enlaces del menú */
+.navbar-nav .nav-link {
+    color: #000;
     text-decoration: none;
-    transition: color 0.2s;
-}
-a:hover {
-    color: #005fa3;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background 0.2s, color 0.2s;
 }
 
-button, input[type="submit"] {
-    background: #0078d4;
-    color: #fff;
+/* Enlace activo o hover en modo claro */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* Enlaces en modo oscuro */
+.navbar-dark .nav-link,
+.navbar-dark .nav-link.active,
+.navbar-dark .nav-link:hover {
+    color: #fff !important;
+    background: rgba(255,255,255,0.08);
+}
+
+/* Enlaces en modo claro */
+.navbar-light .nav-link,
+.navbar-light .nav-link.active,
+.navbar-light .nav-link:hover {
+    color: #000 !important;
+    background: rgba(0,0,0,0.08);
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn {
+    padding: 0.5rem 1rem;
     border: none;
-    padding: 0.6em 1.2em;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     cursor: pointer;
-    font-size: 1em;
-    transition: background 0.2s;
-    text-align: left; /* Opcional, por si hay texto largo en botones */
-}
-button:hover, input[type="submit"]:hover {
-    background: #005fa3;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
 }
 
-.container {
-    max-width: 800px;
-    margin: 2em 0 2em 2em; /* Solo margen izquierdo */
-    padding: 2em;
+.btn-primary {
+    background: #868686;
+    color: #fff;
+}
+
+/* Botón de borde claro (buscador y cambio de tema) */
+.btn-outline-light {
+    background: transparent;
+    color: #000;
+    border: 2px solid #ffffff;
+}
+
+/* Botón en navbar oscura */
+.navbar-dark .btn-outline-light {
+    color: #fff;
+    border-color: #ffffff;
+}
+
+.btn-outline-light:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* =========================
+   HEADER (ENCABEZADO PRINCIPAL)
+========================= */
+header {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    text-align: left; /* Asegura alineación izquierda dentro del contenedor */
+    padding: 3rem 0;
+    color: #000;
+    transition: background 0.3s, color 0.3s;
 }
 
-input, textarea, select {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
-    box-sizing: border-box;
-    text-align: left;
+/* Header en modo oscuro */
+header.bg-secondary {
+    background: #181a1b !important;
+    color: #fff !important;
 }
 
-::-webkit-input-placeholder { color: #aaa; }
-::-moz-placeholder { color: #aaa; }
-:-ms-input-placeholder { color: #aaa; }
-::placeholder { color: #aaa; }
+header.text-white {
+    color: #fff !important;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.lead {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================
+   CONTENEDORES Y FILAS
+========================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.col-md-4 {
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+/* =========================
+   CARDS (TARJETAS)
+========================= */
+.card {
+    background: #fff;
+    color: #000;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Card en modo oscuro */
+.card.bg-dark {
+    background: #23272b !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+}
+
+.card .card-body {
+    padding: 1.5rem;
+}
+
+/* =========================
+   FOOTER (PIE DE PÁGINA)
+========================= */
+footer {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Footer en modo oscuro */
+footer.bg-dark {
+    background: #181a1b !important;
+    color: #fff !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .col-md-4 {
+        max-width: 100%;
+    }
+}
