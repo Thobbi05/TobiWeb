@@ -2,122 +2,28 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio Genérica</title>
-    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TobiWeb - Inicio</title>
+    <link href="estilos.css" rel="stylesheet" />
 </head>
-
 <body>
-    <nav class="navbar" id="mainNavbar">
-        <div class="container navbar-content">
-            <!-- Logo personalizado -->
-            <a class="navbar-brand" href="#">
-                <img id="logoImg" src="recursos/TobiWeb-logo.png" alt="Logo" width="120" height="40">
-            </a>
-            <ul class="navbar-nav">
-                <li><a class="nav-link active" href="#">Inicio</a></li>
-                <li><a class="nav-link" href="#">Acerca de</a></li>
-                <li><a class="nav-link" href="#">Servicios</a></li>
-                <li><a class="nav-link" href="#">Contacto</a></li>
-            </ul>
-            <!-- Barra de búsqueda -->
-            <form class="search-form" role="search">
-                <input class="search-input" type="search" placeholder="Buscar..." aria-label="Buscar">
-                <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form>
-            <!-- Botón de cambio de tema -->
-            <button id="themeToggle" class="btn btn-outline-light" type="button">🌙</button>
-        </div>
+    <nav>
+        <span class="logo" style="font-weight:700; font-size:1.3em; margin-right:2em;">TobiWeb</span>
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="acerca.html">Acerca de</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
-    <header class="header">
-        <div class="container text-center">
-            <h1 class="display-4">Bienvenido a MiSitio</h1>
-            <p class="lead">Tu punto de partida para descubrir contenido increíble.</p>
-            <a href="#" class="btn btn-primary btn-lg mt-3">Saber más</a>
+    <div class="container">
+        <div class="card">
+            <h1>Bienvenido a TobiWeb</h1>
+            <p>
+                hola, soy Tobias Fernández, un desarrollador web apasionado por crear experiencias digitales únicas y funcionales. Este sitio web es un ejemplo de mi trabajo, donde aplico principios de diseño moderno y minimalista para ofrecer una navegación intuitiva y un contenido atractivo.
+            </p>
+            <p>
+                Espero 
         </div>
-    </header>
-    <section class="container my-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Funcionalidad 1</h5>
-                        <p class="card-text">Descripción breve de la funcionalidad o servicio ofrecido.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Funcionalidad 2</h5>
-                        <p class="card-text">Otra descripción breve para captar la atención del usuario.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Funcionalidad 3</h5>
-                        <p class="card-text">Explica por qué tu sitio es útil o interesante.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        &copy; 2025 MiSitio. Todos los derechos reservados.
-    </footer>
-    <script>
-    // Cambia entre tema claro y oscuro y cambia el logo
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const navbar = document.getElementById('mainNavbar');
-    const logoImg = document.getElementById('logoImg');
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    const logoClaro = "recursos/TobiWeb-logo-blanco.png"; // Logo para fondo oscuro
-    const logoOscuro = "recursos/TobiWeb-logo.png";       // Logo para fondo claro
-
-    themeToggle.addEventListener('click', () => {
-        // Body
-        body.classList.toggle('bg-dark');
-        body.classList.toggle('text-white');
-
-        // Navbar
-        navbar.classList.toggle('navbar-dark');
-        navbar.classList.toggle('navbar-light');
-
-        // Cambia el texto de los enlaces de la navbar
-        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-            link.classList.toggle('text-white');
-        });
-
-        // Header
-        header.classList.toggle('bg-secondary');
-        header.classList.toggle('text-white');
-
-        // Cards
-        document.querySelectorAll('.card').forEach(card => {
-            card.classList.toggle('bg-dark');
-            card.classList.toggle('text-white');
-            card.classList.toggle('border-light');
-        });
-
-        // Footer
-        footer.classList.toggle('bg-dark');
-        footer.classList.toggle('text-white');
-
-        // Cambia el icono del botón y el logo
-        if (body.classList.contains('bg-dark')) {
-            themeToggle.textContent = '☀️';
-            logoImg.src = logoClaro;
-        } else {
-            themeToggle.textContent = '🌙';
-            logoImg.src = logoOscuro;
-        }
-    });
-    </script>
+    </div>
 </body>
-
 </html>

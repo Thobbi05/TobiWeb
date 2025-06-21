@@ -1,239 +1,153 @@
-/* =========================
-   ESTILOS GENERALES
-========================= */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #fff;
-    color: #000;
-    transition: background 0.3s, color 0.3s;
-}
-
-.bg-dark {
-    background: #181a1b !important;
-    color: #fff !important;
-}
-
-.text-white {
-    color: #fff !important;
-}
-
-/* =========================
-   NAVBAR (BARRA DE NAVEGACIÓN)
-========================= */
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* Fondo y texto para modo claro */
-.navbar-light {
-    background: #fff !important;
-    color: #000 !important;
-}
-
-/* Fondo y texto para modo oscuro */
-.navbar-dark {
-    background: #181a1b !important;
-    color: #fff !important;
-}
-
-.navbar .container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: inherit;
-    text-decoration: none;
-}
-
-/* Menú de navegación */
-.navbar-nav {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Enlaces del menú */
-.navbar-nav .nav-link {
-    color: #000;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    transition: background 0.2s, color 0.2s;
+/* Fuente y fondo general */
+body {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #222;
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* Enlace activo o hover en modo claro */
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-    background: rgba(0, 0, 0, 0.08);
+/* Encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #2d3a4b;
+    font-weight: 700;
+    margin-bottom: 0.5em;
 }
 
-/* Enlaces en modo oscuro */
-.navbar-dark .nav-link,
-.navbar-dark .nav-link.active,
-.navbar-dark .nav-link:hover {
-    color: #fff !important;
-    background: rgba(255,255,255,0.08);
-}
-
-/* Enlaces en modo claro */
-.navbar-light .nav-link,
-.navbar-light .nav-link.active,
-.navbar-light .nav-link:hover {
-    color: #000 !important;
-    background: rgba(0,0,0,0.08);
-}
-
-/* =========================
-   BOTONES
-========================= */
+/* Botones modernos */
+button,
 .btn {
-    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #818181 0%, #535353 100%);
+    color: #fff;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 8px;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
     cursor: pointer;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(79, 140, 255, 0.15);
 }
 
-.btn-primary {
-    background: #868686;
-    color: #fff;
+button:hover,
+.btn:hover {
+    background: linear-gradient(90deg, #3358e0 0%, #4f8cff 100%);
+    transform: translateY(-2px) scale(1.03);
 }
 
-/* Botón de borde claro (buscador y cambio de tema) */
-.btn-outline-light {
-    background: transparent;
-    color: #000;
-    border: 2px solid #ffffff;
+/* Inputs modernos */
+input,
+select,
+textarea {
+    border: 1px solid #b0b8c1;
+    border-radius: 6px;
+    padding: 0.6em 1em;
+    font-size: 1em;
+    margin-bottom: 1em;
+    outline: none;
+    transition: border 0.2s;
 }
 
-/* Botón en navbar oscura */
-.navbar-dark .btn-outline-light {
-    color: #fff;
-    border-color: #ffffff;
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #727272;
 }
 
-.btn-outline-light:hover {
-    background: #000;
-    color: #fff;
-}
-
-/* =========================
-   HEADER (ENCABEZADO PRINCIPAL)
-========================= */
-header {
-    background: #fff;
-    padding: 3rem 0;
-    color: #000;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* Header en modo oscuro */
-header.bg-secondary {
-    background: #181a1b !important;
-    color: #fff !important;
-}
-
-header.text-white {
-    color: #fff !important;
-}
-
-.display-4 {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.lead {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-}
-
-/* =========================
-   CONTENEDORES Y FILAS
-========================= */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.col-md-4 {
-    flex: 1 1 300px;
-    max-width: 350px;
-}
-
-/* =========================
-   CARDS (TARJETAS)
-========================= */
+/* Tarjetas */
 .card {
     background: #fff;
-    color: #000;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border: 1px solid #e0e0e0;
-    margin-bottom: 2rem;
-    transition: background 0.3s, color 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+    padding: 2em;
+    margin: 1.5em 0;
+    transition: box-shadow 0.2s;
 }
 
-/* Card en modo oscuro */
-.card.bg-dark {
-    background: #23272b !important;
-    color: #fff !important;
-    border: 1px solid #444 !important;
+.card:hover {
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.16);
 }
 
-.card .card-body {
-    padding: 1.5rem;
+/* Navegación */
+nav {
+    background: #747474;
+    color: #fff;
+    padding: 1em 2em;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 2px 8px rgba(51, 88, 224, 0.12);
 }
 
-/* =========================
-   FOOTER (PIE DE PÁGINA)
-========================= */
-footer {
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1.5em;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffda47;
+}
+
+/* Contenedores responsivos */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+/* Tablas modernas */
+table {
+    width: 100%;
+    border-collapse: collapse;
     background: #fff;
-    color: #000;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    transition: background 0.3s, color 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
 }
 
-/* Footer en modo oscuro */
-footer.bg-dark {
-    background: #181a1b !important;
-    color: #fff !important;
+th,
+td {
+    padding: 1em;
+    text-align: left;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-    .row {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .col-md-4 {
-        max-width: 100%;
-    }
+th {
+    background: #f0f4fa;
+    color: #3358e0;
+}
+
+tr:nth-child(even) {
+    background: #f9fbfd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+    margin-bottom: 1.5em;
+}
+
+form button {
+    align-self: flex-start;
 }
